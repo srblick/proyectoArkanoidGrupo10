@@ -18,10 +18,6 @@ export default function App(){
                 }
             },
             scene:[Escena]
-        /*    scene: {
-                preload: preload,
-                create: create
-            }*/
         };
         // arranca el Juego
         const game = new Phaser.Game(config);
