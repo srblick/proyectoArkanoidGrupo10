@@ -15,6 +15,7 @@ class Felicitaciones extends Phaser.Scene {
 
     create(){
         this.add.image(400, 300, 'congratulations');
+
         this.botonReiniciar.crear();
         this.imagenFelicitaciones = this.add.image(400,200,'felicitaciones');
     }

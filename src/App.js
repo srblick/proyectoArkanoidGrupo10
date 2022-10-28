@@ -7,6 +7,7 @@ import Felicitaciones from "./components/Felicitaciones";
 import GameOver from "./components/GameOver";
 import Menu from "./components/Menu"
 
+
 export default function App(){
 
     //uso state de una variable listo, si no usamos esto los lienzos se acumulan en la vista.
@@ -28,6 +29,7 @@ export default function App(){
                 }
             },
             scene:[Menu,Escena,Felicitaciones,GameOver,EscenaSec]
+
         };
         // arranca el Juego
         const game = new Phaser.Game(config);

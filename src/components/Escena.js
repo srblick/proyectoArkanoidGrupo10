@@ -23,6 +23,9 @@ class Escena extends Phaser.Scene{
         this.load.image('fondo', 'img/fondo.png');
         this.load.image('platform', 'img/platform.png');
         this.load.image('pelota', 'img/pelota.png');
+
+        this.load.image('gameOver', 'img/gameOver.png');
+
         this.load.image('bloqueRojo', 'img/bloqueRojo.png');
         this.load.image('bloqueAzul', 'img/bloqueAzul.png');
 
