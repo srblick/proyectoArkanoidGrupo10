@@ -10,10 +10,12 @@ class Felicitaciones extends Phaser.Scene {
     preload(){
         this.load.image('felicitaciones', 'img/felicitaciones1.png');
         this.botonReiniciar.precargar();
+        this.load.image("congratulations","img/congratulations.jpg");
     }
 
     create(){
-        this.add.image(400, 300, 'fondo');
+        this.add.image(400, 300, 'congratulations');
+
         this.botonReiniciar.crear();
         this.imagenFelicitaciones = this.add.image(400,200,'felicitaciones');
     }

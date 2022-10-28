@@ -2,8 +2,11 @@ import Phaser from "phaser";
 import { useEffect } from "react";
 import { React, useState } from "react";
 import Escena from "./components/Escena";
+import EscenaSec from "./components/EscenaSec";
 import Felicitaciones from "./components/Felicitaciones";
 import GameOver from "./components/GameOver";
+import Menu from "./components/Menu"
+
 
 export default function App(){
 
@@ -25,7 +28,8 @@ export default function App(){
                     gravity: { y: 0 }
                 }
             },
-            scene:[Escena,Felicitaciones,GameOver]
+            scene:[Menu,Escena,Felicitaciones,GameOver,EscenaSec]
+
         };
         // arranca el Juego
         const game = new Phaser.Game(config);

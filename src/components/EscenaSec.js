@@ -1,15 +1,14 @@
 import Phaser from "phaser";
 
-class Escena extends Phaser.Scene{
+class EscenaSec extends Phaser.Scene{
 
     constructor(){
-        super({key: 'principal'})
+        super({key: 'secundaria'})
     }
     platform = null;
     pelota = null;
     gameOver = null;
     puntaje = null;
-
     cursor = null;
     
     //metodo para iniciar una puntuacion
@@ -20,14 +19,11 @@ class Escena extends Phaser.Scene{
     //Precarga de todos los elementos de la escena
     preload ()
     {
-        this.load.image('fondo', 'img/fondo.png');
-        this.load.image('platform', 'img/platform.png');
-        this.load.image('pelota', 'img/pelota.png');
-
-        this.load.image('gameOver', 'img/gameOver.png');
-
-        this.load.image('bloqueRojo', 'img/bloqueRojo.png');
-        this.load.image('bloqueAzul', 'img/bloqueAzul.png');
+        this.load.image('fondo2', 'img/fondo2.jpg');
+        this.load.image('platform2', 'img/platform2.png');
+        this.load.image('pelota2', 'img/pelota2.png');
+        this.load.image('bloqueRojo2', 'img/bloqueRojo2.png');
+        this.load.image('bloqueAzul2', 'img/bloqueAzul2.png');
 
     }
 
@@ -37,7 +33,7 @@ class Escena extends Phaser.Scene{
         this.physics.world.setBoundsCollision(true, true, true, false);
         
         //agrega la imagen de fondo
-        this.add.image(400, 300,'fondo');
+        this.add.image(400, 300,'fondo2');
 
         //Ubica la puntuación en la esquina derecha, con su forma
         this.puntajeEnTexto = this.add.text(16,16, 'PUNTOS: 0',{
@@ -48,8 +44,8 @@ class Escena extends Phaser.Scene{
 
         //TODO SOBRE EL GRUPO DE BLOQUES
         this.grupoDeBloques = this.physics.add.staticGroup({
-            key: ['bloqueRojo', 'bloqueAzul'],
-            frameQuantity: 2,
+            key: ['bloqueRojo2', 'bloqueAzul2'],
+            frameQuantity: 12,
             gridAlign: {
                 width: 8,
                 height: 3,
@@ -62,12 +58,12 @@ class Escena extends Phaser.Scene{
 
 
         //TODO SOBRE LA PLATAFORMA
-        this.platform = this.physics.add.image(400,550, 'platform').setImmovable();
+        this.platform = this.physics.add.image(400,550, 'platform2').setImmovable();
         this.platform.body.allowGravity = false;
         this.platform.setCollideWorldBounds(true);
 
         //TODO SOBRE LA PELOTA
-        this.pelota = this.physics.add.image(400,520, 'pelota');
+        this.pelota = this.physics.add.image(400,520, 'pelota2');
         //El "setData" guarda un estado de la pelota en esta caso "reposo"
         this.pelota.setData('reposo', true)
         this.pelota.setCollideWorldBounds(true);
@@ -154,4 +150,4 @@ class Escena extends Phaser.Scene{
     }
 
 }
-export default Escena;
+export default EscenaSec;

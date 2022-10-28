@@ -4,14 +4,14 @@ export class BotonReiniciar{
     }
 
     precargar(){
-        this.escenarelacionada.load.image('boton', 'img/reiniciar.png');
+        this.escenarelacionada.load.image('botonreiniciar', 'img/reiniciar.png');
     }
 
     crear(){
-        this.botoninicio = this.escenarelacionada.add.image(400,450,'boton').setInteractive();
+        this.botoninicio = this.escenarelacionada.add.image(400,450,'botonreiniciar').setInteractive();
 
         this.botoninicio.on('pointerdown', () => {
-            this.escenarelacionada.scene.start('principal');
+            this.escenarelacionada.scene.start('menu');
         });
         
     }

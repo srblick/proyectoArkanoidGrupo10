@@ -10,10 +10,11 @@ class GameOver extends Phaser.Scene {
     preload(){
         this.load.image('gameover', 'img/gameOver.png');
         this.botonReiniciar.precargar();
+        this.load.image("perdiste", "img/perdiste.jpg");
     }
 
     create(){
-        this.add.image(400, 300, 'fondo');
+        this.add.image(400, 300, 'perdiste');
         this.botonReiniciar.crear();
         this.imagenGameOver = this.add.image(400,200,'gameover');
     }
