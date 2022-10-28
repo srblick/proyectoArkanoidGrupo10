@@ -8,12 +8,12 @@ class GameWin extends Phaser.Scene{
     }
     
     preload() {
-        this.load.image('gameWin','img/gamewin.png');
+        this.load.image('gameWin','img/youwin.png');
         this.botonReiniciar.precargar();
     }
 
     create() {
-        this.add.image(400, 300, fondo);
+        this.add.image(400, 300, 'fondo');
         this.botonReiniciar.crear();
         this.imagenGameWin = this.add.image(400, 300, 'gameWin');
     }

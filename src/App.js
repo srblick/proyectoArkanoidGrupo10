@@ -2,6 +2,8 @@ import Phaser from "phaser";
 import { useEffect } from "react";
 import { React, useState } from "react";
 import Escena from "./components/Escena";
+import GameOver from "./components/GameOver";
+import GameWin from "./components/GameWin";
 
 export default function App(){
     const [listo, setListo] = useState(false);
@@ -14,10 +16,10 @@ export default function App(){
             physics: {
                 default: 'arcade',
                 arcade: {
-                    gravity: { y: 200 }
+                    //gravity: { y: 200 }
                 }
             },
-            scene:[Escena]
+            scene:[Escena, GameOver, GameWin]
         };
         // arranca el Juego
         const game = new Phaser.Game(config);

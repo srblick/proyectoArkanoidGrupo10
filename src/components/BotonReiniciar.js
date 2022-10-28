@@ -1,10 +1,10 @@
-export class BotonReiniciar{
+export default class BotonReiniciar{
     constructor(escena){
         this.escenaRelacionada = escena;
     }
 
     precargar(){
-        this.escenaRelacionada.load.spritesheet('boton', 'img/reiniciar.jpg');
+        this.escenaRelacionada.load.spritesheet('boton', 'img/reiniciar.png',{frameWidth: 201, frameHeight: 84});
     }
 
     crear(){
@@ -19,7 +19,8 @@ export class BotonReiniciar{
             this.botonInicio.setFrame(0);
         });
         //se activa cuando hace click en el boton y cambia a la escena principal
-        this.botonInicio.on('pointerout', () => {
+        this.botonInicio.on('pointerdown', () => {
+            this.botonInicio.setFrame(2);
             this.escenaRelacionada.scene.start('principal');
         });
     }
