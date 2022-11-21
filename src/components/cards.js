@@ -1,9 +1,7 @@
-import React from 'react'
-import Card from './card'
-import desarrolladores from './Json/desarrolladores.json'
-//import {BrowserRouter,Routes,Route,Link} from 'react-router-dom'
-import Volver from "./Volver"
-
+import React from 'react';
+import Card from './card';
+import desarrolladores from './Json/desarrolladores.json';
+//import {BrowserRouter,Routes,Route,Link} from 'react-router-dom';
 
 function Cards() {
   return (
@@ -17,7 +15,6 @@ function Cards() {
           ))
         }
         <footer>
-          <Volver/>
         </footer>
       </div>
     </div>
