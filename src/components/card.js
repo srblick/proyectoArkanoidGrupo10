@@ -16,8 +16,6 @@ function card({title,edad, imagen, text, repositorio}) {
             <ListGroup.Item><p className='card-text text-primary'>Intereses: {text}</p></ListGroup.Item>
             <ListGroup.Item><Card.Link href={repositorio}>Mi repositorio</Card.Link></ListGroup.Item>
             </ListGroup>
-            
-            
       </div>
     </div>
   )
