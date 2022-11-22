@@ -18,6 +18,7 @@ class Felicitaciones extends Phaser.Scene {
 
         this.botonReiniciar.crear();
         this.imagenFelicitaciones = this.add.image(400,200,'felicitaciones');
+        this.sound.add('audioWinner',{loop: false}).play();
     }
 }
 

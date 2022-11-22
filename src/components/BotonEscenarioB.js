@@ -11,6 +11,7 @@ export class BotonEscenarioB{
         this.botoninicio = this.escenarelacionada.add.image(400,400,'botonB').setInteractive();
 
         this.botoninicio.on('pointerdown', () => {
+            this.escenarelacionada.sound.add('audioButton',{loop: false}).play();
             this.escenarelacionada.scene.start('secundaria');
         });
         

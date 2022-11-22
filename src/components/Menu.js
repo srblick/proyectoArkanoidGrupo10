@@ -11,6 +11,11 @@ class Menu extends Phaser.Scene {
 
     preload(){
         this.load.image('menu', 'img/menu.jpg');
+        this.load.audio('audioButton','./sound/Button.ogg');
+        this.load.audio('audioBloque','sound/bloque.ogg');
+        this.load.audio('audioGameOver','sound/GameOver.ogg');
+        this.load.audio('audioWinner','sound/LevelComplete.ogg');
+        this.load.audio('audioPlataforma','sound/pelota.ogg');
         this.botonEscenarioA.precargar();
         this.botonEscenarioB.precargar();
     }
