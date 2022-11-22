@@ -17,6 +17,7 @@ class GameOver extends Phaser.Scene {
         this.add.image(400, 300, 'perdiste');
         this.botonReiniciar.crear();
         this.imagenGameOver = this.add.image(400,200,'gameover');
+        this.sound.add('audioGameOver',{loop: false}).play();
     }
 }
 

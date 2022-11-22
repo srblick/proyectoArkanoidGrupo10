@@ -11,6 +11,9 @@ class Escena extends Phaser.Scene{
     puntaje = null;
 
     cursor = null;
+
+    audioBloque;
+    audioPlataforma;
     
     //metodo para iniciar una puntuacion
     init(){
@@ -80,12 +83,18 @@ class Escena extends Phaser.Scene{
 
         //INPUT PARA LOS CONTROLES DE LA PLATAFORMA
         this.cursors = this.input.keyboard.createCursorKeys();
+
+        //Agrego audios
+        this.audioBloque = this.sound.add('audioBloque',{loop: false});
+        this.audioPlataforma = this.sound.add('audioPlataforma',{loop: false});
+
     }
     
     //METODO CUANDO IMPACTA LA PELOTA CON EL BLOQUE
     ImpactoBloque(pelota, bloque){
         bloque.disableBody(true,true);
         this.aumentarPuntaje(15);
+        this.audioBloque.play();
         //si llegan los bloques a cero se carga la escena de "felicitaciones"
         if(this.grupoDeBloques.countActive() === 0){
             this.mostrarFelicitaciones();
@@ -100,6 +109,8 @@ class Escena extends Phaser.Scene{
 
         //REDIRECCIONA LA PELOTA SEGUN DONDE QUE PARTE DE LA PLATAFORMA GOLPEE
         let impactoRelativo = this.pelota.x - this.platform.x;
+
+        this.audioPlataforma.play();
 
         if(impactoRelativo < 0.1 && impactoRelativo > -0.1){
             this.pelota.setVelocityX(Phaser.Math.Between(-10, 10))
